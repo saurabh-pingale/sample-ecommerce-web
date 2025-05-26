@@ -1,7 +1,8 @@
 export class CartUI {
-    constructor(conatainerId, cartService) {
+    constructor(conatainerId, cartService, appInstance) {
         this.container = document.getElementById(conatainerId);
         this.cartService = cartService;
+        this.appInstance = appInstance;
         this.cartCount = document.getElementById('cart-count');
         this.modal = document.getElementById('cart-modal');
         this.closeBtn = document.getElementById('close-cart');
@@ -75,10 +76,16 @@ export class CartUI {
 
     _attachCheckout() {
         this.checkoutBtn.addEventListener('click', () => {
-            alert('Order placed!');
-            this.cartService.clearCart();
-            this.renderCart();
-            this.updateCartCount();
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (!isLoggedIn) {
+                localStorage.setItem('redirectAfterLogin', 'checkout');
+                window.location.hash = '#login';
+                this.closeCart();
+                return;
+            }
+
+            window.location.hash = '#checkout';
             this.closeCart();
         });
     }

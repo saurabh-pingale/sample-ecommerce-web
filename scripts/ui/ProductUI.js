@@ -3,10 +3,11 @@ import { CartService } from "../services/CartService.js";
 import { CartUI } from "./CartUI.js";
 
 export class ProductUI {
-    constructor(containerID) {
+    constructor(containerID, appInstance) {
         this.container = document.getElementById(containerID);
+        this.appInstance = appInstance;
         this.cartService = new CartService();
-        this.cartUI = new CartUI('cart-items', this.cartService);
+        this.cartUI = new CartUI('cart-items', this.cartService, this.appInstance);
         this.products = ProductService.getProducts();
         this.cartService.setProducts(this.products);
     }

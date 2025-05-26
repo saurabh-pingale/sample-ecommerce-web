@@ -1,16 +1,6 @@
-import { renderHeader } from "../components/header.js";
-import { renderMain } from "../components/main.js";
-import { renderCartModal } from "../components/modal.js";
-import { ProductUI } from "./ui/ProductUI.js";
+import { Router } from "./services/Router.js";
+import { routes } from "./routes.js";
 
-document.addEventListener('DOMContentLoaded', () =>{
-    const app = document.getElementById('app');
-
-    app.innerHTML = `
-        ${renderHeader()}
-        ${renderMain()}
-        ${renderCartModal()}
-    `;
-    const productUI = new ProductUI('products-container');
-    productUI.renderProducts();
+document.addEventListener('DOMContentLoaded', () => {
+    new Router(routes);
 });
