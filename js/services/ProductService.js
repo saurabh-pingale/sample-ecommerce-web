@@ -1,6 +1,4 @@
-import { Product } from "../models/Product.js";
-
-export class ProductService {
+class ProductService {
     static getProducts() {
         return [
             new Product(1, 'T-Shirt', 300, 'https://static.zara.net/assets/public/8f94/92a9/7a5f49bb9816/0936e1b4929b/01887455500-p/01887455500-p.jpg?ts=1740396784922&w=1024'),

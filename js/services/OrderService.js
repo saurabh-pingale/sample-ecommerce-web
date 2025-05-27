@@ -1,4 +1,4 @@
-export class OrderService {
+class OrderService {
     static ORDERS_KEY = 'ecommerce_orders';
 
     static async createOrder(orderData) {

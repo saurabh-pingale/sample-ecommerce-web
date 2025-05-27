@@ -1,4 +1,4 @@
-export class AuthService {
+class AuthService {
     static USERS_KEY = 'ecommerce_users';
 
     static async registerUser(userData) {
