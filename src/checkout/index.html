@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Ecommerce - Checkout</title>
-    <link rel="stylesheet" href="styles/checkout.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="site-header">
@@ -12,7 +12,7 @@
             <h1>🛍️ Simple Ecommerce</h1>
         </div>
         <div class="header-actions">
-            <a href="index.html">Home</a>
+            <a href="../home/index.html">Home</a>
             <button id="logout-btn">Logout</button>
         </div>
     </header>
@@ -26,9 +26,9 @@
         <button id="place-order-btn">Place Order</button>
     </div>
 
-    <script src="js/services/CartService.js"></script>
-    <script src="js/services/OrderService.js"></script>
-    <script src="js/utils/utils.js"></script>
-    <script src="js/checkout.js"></script>
+    <script src="../shared/services/CartService.js"></script>
+    <script src="../shared/services/OrderService.js"></script>
+    <script src="../shared/utils/auth-utils.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

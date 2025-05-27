@@ -39,9 +39,9 @@ function initializeCart() {
 
     checkoutBtn.addEventListener('click', function() {
         if (!isLoggedIn()) {
-            window.location.href = 'login.html?redirect=checkout';
+            window.location.href = '../login/index.html?redirect=checkout';
         } else {
-            window.location.href = 'checkout.html';
+            window.location.href = '../checkout/index.html';
         }
         closeCart();
     });
