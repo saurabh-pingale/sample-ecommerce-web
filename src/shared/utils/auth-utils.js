@@ -10,12 +10,11 @@ function logout() {
 function updateLoginButton() {
     const loginBtn = document.getElementById('login-btn');
     const logoutBtn = document.getElementById('logout-btn');
+
+    if (!loginBtn && !logoutBtn) return;
     
-    if (isLoggedIn()) {
-        if (loginBtn) loginBtn.style.display = 'none';
-        if (logoutBtn) logoutBtn.style.display = 'inline-block';
-    } else {
-        if (loginBtn) loginBtn.style.display = 'inline-block';
-        if (logoutBtn) logoutBtn.style.display = 'none';
-    }
+    const loggedIn = isLoggedIn();
+
+    if (loginBtn) loginBtn.style.display = loggedIn ? 'none' : 'inline-block';
+    if (logoutBtn) logoutBtn.style.display = loggedIn ? 'inline-block' : 'none';
 }

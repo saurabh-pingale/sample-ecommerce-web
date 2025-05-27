@@ -1,6 +1,11 @@
 let cartService;
 
 document.addEventListener('DOMContentLoaded', async function() {
+    const loginBtn = document.getElementById('login-btn');
+    loginBtn.addEventListener('click', function() {
+        window.location.href = '../login/index.html';
+    });
+    
     cartService = new CartService();
     const cartCount = document.getElementById('cart-count');
     const cartModal = document.getElementById('cart-modal');
